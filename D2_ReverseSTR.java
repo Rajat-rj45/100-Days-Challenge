@@ -1,4 +1,4 @@
-public class ReverseSTR {
+public class D2_ReverseSTR {
 
     public static String reverseWord(String str)
     {

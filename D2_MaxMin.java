@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-class MaxMin{
+class D2_MaxMin{
    
 
     public static int findSum(int A[]) 
