@@ -154,10 +154,11 @@ public class linkedlist{
              else{
                 System.out.println("your linkedlist ");
                 while( temp!=null){
-                    System.out.println(temp.data);
+                    System.out.print(temp.data+"-->");
                     temp=temp.next;
 
                 }
+                System.out.print("N");
              }
         }
 
@@ -210,12 +211,35 @@ public void sort(){
     
 }
 
+// reverse linkedlist
+
+public void revese(){
+    if(head==null || head.next==null){
+        System.out.println("linkedlist is empty please insert the data ");
+        return;
+    }
+    Node preNode=head;
+    Node currNode=head.next;
+    while(currNode!=null){
+        Node nextNode=currNode.next;
+        currNode.next=preNode;
+
+        //update
+        preNode=currNode;
+        currNode=nextNode;
+    }
+    head.next=null;
+    head=preNode;
+    System.out.println("Linkedlist is reversed");
+    
+}
+
     public static void main(String[] args) {
        linkedlist ll=new linkedlist();
        Scanner rr=new Scanner(System.in);
       int n=1;
       do{
-        System.out.println("press 1 to insert data\npress 2 to display data\npress 3 to delete data\npress 4 to search \npress 5 to sorting\npress 6 for exit ");
+        System.out.println("\npress 1 to insert data\npress 2 to display data\npress 3 to delete data\npress 4 to search \npress 5 to sorting\npress 6 to reverse \npress 7 to exit ");
         int choice=rr.nextInt();
         switch(choice){
          case 1:{
@@ -240,6 +264,10 @@ public void sort(){
             break;
         }
         case 6:{
+            ll.revese();
+            break;
+        }
+        case 7:{
             System.exit(0);
             break;
         }
